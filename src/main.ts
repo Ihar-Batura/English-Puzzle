@@ -1,5 +1,5 @@
 import './style.css';
-import createPageLogin from './components/page_login';
+import createPageLogin from './layout/page_login';
 
 const body = document.querySelector('body');
 
