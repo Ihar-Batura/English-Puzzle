@@ -1,0 +1,10 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 7px;
+  background: url('../../assets/img/page_login.jpg') center center / cover
+    no-repeat;
+}

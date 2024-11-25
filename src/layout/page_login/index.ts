@@ -1,14 +1,16 @@
 import styles from './index.module.css';
-import createForm from '../../components/form';
+import Form from '../../components/form';
+import Label from '../../components/label';
+import Input from '../../components/input';
+import Button from '../../components/button';
 
-const form = createForm({ className: 'page-login__form' });
+const form = Form({ autocomplete: 'off', className: 'page-login__form' });
 
 function createPageLogin(
   className?: string,
   parent?: HTMLElement | null
 ): HTMLElement {
   const pageLogin = document.createElement('section');
-  pageLogin.appendChild(form);
 
   pageLogin.classList.add(styles.section);
   if (className) {
@@ -18,46 +20,49 @@ function createPageLogin(
     parent.append(pageLogin);
   }
 
+  pageLogin.appendChild(form);
+
+  Label({
+    forInput: 'name',
+    text: 'First Name',
+    className: 'login-label',
+    parent: form,
+  });
+  Input({
+    type: 'text',
+    id: 'name',
+    className: 'login-input',
+    title: 'Enter First Name (only latin letters and the hyphen (-) symbol)',
+    required: ' ',
+    minLength: '3',
+    pattern: '[A-Z]{1}[a-z\\-]{2,25}',
+    parent: form,
+  });
+  Label({
+    forInput: 'surname',
+    text: 'Last Name',
+    className: 'login-label',
+    parent: form,
+  });
+  Input({
+    type: 'text',
+    id: 'surname',
+    className: 'login-input',
+    title: 'Enter Last Name (only latin letters and the hyphen (-) symbol)',
+    required: ' ',
+    minLength: '4',
+    pattern: '[A-Z]{1}[a-z\\-]{3,25}',
+    parent: form,
+  });
+  Button({
+    className: 'login-btn',
+    text: 'LogIn',
+    disabled: true,
+    onClick: () => console.log('clicked'),
+    parent: form,
+  });
+
   return pageLogin;
 }
 
 export default createPageLogin;
-
-// import Button from './components/html_elements/button';
-// import label from './components/html_elements/label';
-// import InputName from './components/html_elements/input';
-
-// Button({
-//   className: 'Corol',
-//   text: 'LogIn',
-//   onClick: () => console.log('clicked'),
-//   parent: container,
-// });
-
-// label({
-//   forInput: 'FirstName',
-//   text: 'Add your First Name',
-//   parent: container,
-// });
-
-// InputName({
-//   className: 'ga',
-//   id: 'FirstName',
-//   minLength: '3',
-//   placeholder: 'FirstName',
-//   parent: container,
-// });
-
-// label({
-//   forInput: 'LastName',
-//   text: 'Add your Last Name',
-//   parent: container,
-// });
-
-// InputName({
-//   className: 'ga',
-//   id: 'LastName',
-//   minLength: '4',
-//   placeholder: 'LastName',
-//   parent: container,
-// });
