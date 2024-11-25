@@ -161,3 +161,8 @@ body {
   font-weight: 400;
   color: black;
 }
+
+.login-label {
+  line-height: 130%;
+  letter-spacing: 0.08em;
+}
