@@ -7,5 +7,6 @@ export type InputProps = {
   placeholder?: string;
   minLength?: string;
   pattern?: string;
+  addRules?: string;
   parent?: HTMLElement;
 };
