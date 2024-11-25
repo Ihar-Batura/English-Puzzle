@@ -1,16 +1,28 @@
 import styles from './index.module.css';
-import { BtnOptions } from './types';
+import { BtnProps } from './types';
 
-function Button({ className, text, onClick, parent }: BtnOptions): HTMLElement {
+function Button({
+  className,
+  text,
+  disabled,
+  onClick,
+  parent,
+}: BtnProps): HTMLElement {
   const button = document.createElement('button');
 
   button.classList.add(styles.button);
   if (className) {
     button.classList.add(className);
   }
-  button.onclick = onClick;
-  button.textContent = text;
-
+  if (text) {
+    button.textContent = text;
+  }
+  if (disabled) {
+    button.setAttribute('disabled', ' ');
+  }
+  if (onClick) {
+    button.onclick = onClick;
+  }
   if (parent) {
     parent.append(button);
   }
