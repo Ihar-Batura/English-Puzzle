@@ -8,5 +8,6 @@ export type InputProps = {
   minLength?: string;
   pattern?: string;
   addRules?: string;
+  onInput?: () => void;
   parent?: HTMLElement;
 };

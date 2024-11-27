@@ -3,6 +3,7 @@ import Label from '../../components/label';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import Span from '../../components/span';
+import isValidInput from '../../functional/check_form_input';
 
 function createLoginForm() {
   const form = Form({ autocomplete: 'off', className: 'page-login__form' });
@@ -22,6 +23,7 @@ function createLoginForm() {
     minLength: '3',
     pattern: '[A-Z]{1}[a-z\\-]{2,25}',
     addRules: 'name-minlength',
+    onInput: () => isValidInput('name'),
     parent: form,
   });
   Span({
@@ -45,6 +47,7 @@ function createLoginForm() {
     minLength: '4',
     pattern: '[A-Z]{1}[a-z\\-]{3,25}',
     addRules: 'surname-minlength',
+    onInput: () => isValidInput('surname'),
     parent: form,
   });
   Span({

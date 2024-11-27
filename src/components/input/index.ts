@@ -11,6 +11,7 @@ function Input({
   minLength,
   pattern,
   addRules,
+  onInput,
   parent,
 }: InputProps): HTMLInputElement {
   const input = document.createElement('input');
@@ -40,6 +41,9 @@ function Input({
   }
   if (addRules) {
     input.setAttribute('aria-describedby', addRules);
+  }
+  if (onInput) {
+    input.oninput = onInput;
   }
   if (parent) {
     parent.append(input);
