@@ -1,3 +1,5 @@
+import isLoginFormValid from './check_loginform_isvalid';
+
 function isValidInput(id: string): void {
   const fieldInput: HTMLInputElement | null = document.querySelector(`#${id}`);
   const errorSpan: HTMLSpanElement | null = document.querySelector(
@@ -17,6 +19,7 @@ function isValidInput(id: string): void {
         fieldInput.classList.add('input-invalid');
         errorSpan.classList.add('input-error');
       }
+      isLoginFormValid();
     }
   }
 }

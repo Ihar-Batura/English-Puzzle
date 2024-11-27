@@ -172,7 +172,7 @@ input {
   font-size: 18px;
 }
 .input-valid {
-  border-color: green;
+  border: 3px solid green;
 }
 .input-invalid {
   border-color: red;
@@ -199,8 +199,11 @@ input {
   line-height: 110%;
   letter-spacing: 0.03em;
   margin: 5px 0 20px 5px;
-
   color: transparent;
+}
+
+input:invalid input:focus {
+  color: red;
 }
 
 .input-error {
