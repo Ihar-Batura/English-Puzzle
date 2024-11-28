@@ -1,3 +1,12 @@
+:root {
+  /* colors */
+  --clr-valid: green;
+  --clr-invalid: red;
+  --clr-white: white;
+  --clr-dark: black;
+  --clr-background: rgba(230, 230, 250, 0.9);
+}
+
 /**
   Нормализация блочной модели
  */
@@ -159,39 +168,40 @@ body {
   font-family: 'Merriweather', serif;
   font-style: normal;
   font-weight: 400;
-  color: black;
+  color: var(--clr-dark);
 }
 
-.login-label {
-  line-height: 130%;
-  letter-spacing: 0.08em;
-}
-
-input {
-  border: 3px solid black;
-  font-size: 18px;
-}
-.input-valid {
-  border: 3px solid green;
-}
-.input-invalid {
-  border-color: red;
-}
+/*   Page Login Form   */
 
 .page-login__form {
   padding: 30px 20px;
   border-radius: 12px;
   border: 3px solid rgb(105, 105, 105);
-  background-color: rgba(230, 230, 250, 0.9);
+  background-color: var(--clr-background);
 }
 
 .login-label {
   font-size: 20px;
   margin-left: 5px;
+  line-height: 130%;
+  letter-spacing: 0.08em;
 }
 
 .login-input {
   margin: 3px 0;
+}
+
+input {
+  border: 3px solid var(--clr-dark);
+  font-size: 18px;
+}
+
+.input-valid {
+  border-color: var(--clr-valid);
+}
+
+.input-invalid {
+  border-color: var(--clr-invalid);
 }
 
 .login-span {
@@ -202,12 +212,8 @@ input {
   color: transparent;
 }
 
-input:invalid input:focus {
-  color: red;
-}
-
 .input-error {
-  color: red;
+  color: var(--clr-invalid);
 }
 
 .login-btn {
@@ -218,4 +224,9 @@ input:invalid input:focus {
 
 button:disabled {
   cursor: default;
+}
+
+.login-btn:not(:disabled) {
+  background-color: var(--clr-valid);
+  color: var(--clr-white);
 }
