@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { LabelProps } from './types';
 
-function Label({
+function createLabel({
   forInput,
   text,
   className,
@@ -23,4 +23,4 @@ function Label({
   return label;
 }
 
-export default Label;
+export default createLabel;

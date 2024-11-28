@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { DivProps } from './types';
 
-function Div({ className, id, text, parent }: DivProps): HTMLDivElement {
+function createDiv({ className, id, text, parent }: DivProps): HTMLDivElement {
   const div = document.createElement('div');
 
   div.classList.add(styles.div);
@@ -21,4 +21,4 @@ function Div({ className, id, text, parent }: DivProps): HTMLDivElement {
   return div;
 }
 
-export default Div;
+export default createDiv;

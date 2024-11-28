@@ -1,7 +1,11 @@
 import styles from './index.module.css';
 import { FormProps } from './types';
 
-function Form({ autocomplete, className, parent }: FormProps): HTMLFormElement {
+function createForm({
+  autocomplete,
+  className,
+  parent,
+}: FormProps): HTMLFormElement {
   const form = document.createElement('form');
   form.setAttribute('autocomplete', autocomplete);
   form.classList.add(styles.form);
@@ -15,4 +19,4 @@ function Form({ autocomplete, className, parent }: FormProps): HTMLFormElement {
   return form;
 }
 
-export default Form;
+export default createForm;

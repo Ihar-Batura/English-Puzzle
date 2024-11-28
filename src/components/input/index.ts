@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { InputProps } from './types';
 
-function Input({
+function createInput({
   type,
   id,
   className,
@@ -52,4 +52,4 @@ function Input({
   return input;
 }
 
-export default Input;
+export default createInput;

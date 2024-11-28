@@ -1,21 +1,24 @@
-import Form from '../../components/form';
-import Label from '../../components/label';
-import Input from '../../components/input';
-import Button from '../../components/button';
-import Span from '../../components/span';
+import createForm from '../../components/form';
+import createLabel from '../../components/label';
+import createInput from '../../components/input';
+import createButton from '../../components/button';
+import createSpan from '../../components/span';
 import isValidInput from '../../functional/check_form_input';
 import saveUserInLS from '../../functional/save_username_in_ ls';
 
 function createLoginForm() {
-  const form = Form({ autocomplete: 'off', className: 'page-login__form' });
+  const form = createForm({
+    autocomplete: 'off',
+    className: 'page-login__form',
+  });
 
-  Label({
+  createLabel({
     forInput: 'name',
     text: 'First Name',
     className: 'login-label',
     parent: form,
   });
-  Input({
+  createInput({
     type: 'text',
     id: 'name',
     className: 'login-input',
@@ -27,19 +30,19 @@ function createLoginForm() {
     onInput: () => isValidInput('name'),
     parent: form,
   });
-  Span({
+  createSpan({
     id: 'name-minlength',
     className: 'login-span',
     text: 'Minimum 3 characters, the first letter is in uppercase',
     parent: form,
   });
-  Label({
+  createLabel({
     forInput: 'surname',
     text: 'Last Name',
     className: 'login-label',
     parent: form,
   });
-  Input({
+  createInput({
     type: 'text',
     id: 'surname',
     className: 'login-input',
@@ -51,13 +54,13 @@ function createLoginForm() {
     onInput: () => isValidInput('surname'),
     parent: form,
   });
-  Span({
+  createSpan({
     id: 'surname-minlength',
     className: 'login-span',
     text: 'Minimum 4 characters, the first letter is in uppercase',
     parent: form,
   });
-  Button({
+  createButton({
     className: 'login-btn',
     text: 'LogIn',
     disabled: true,

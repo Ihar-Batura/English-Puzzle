@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { BtnProps } from './types';
 
-function Button({
+function createButton({
   className,
   text,
   disabled,
@@ -30,4 +30,4 @@ function Button({
   return button;
 }
 
-export default Button;
+export default createButton;

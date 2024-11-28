@@ -1,2 +1,5 @@
 .div {
+  width: 100%;
+  min-height: 100vh;
+  background: url('../../assets/img/page_login.jpg') center center / cover;
 }

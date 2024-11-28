@@ -1,7 +1,12 @@
 import styles from './index.module.css';
 import { SpanProps } from './types';
 
-function Span({ id, className, text, parent }: SpanProps): HTMLSpanElement {
+function createSpan({
+  id,
+  className,
+  text,
+  parent,
+}: SpanProps): HTMLSpanElement {
   const span = document.createElement('span');
 
   if (id) {
@@ -21,4 +26,4 @@ function Span({ id, className, text, parent }: SpanProps): HTMLSpanElement {
   return span;
 }
 
-export default Span;
+export default createSpan;
