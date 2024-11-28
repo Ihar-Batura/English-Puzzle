@@ -1,3 +1,5 @@
+import cleanPage from './clean_page';
+
 function saveUserInLS(): void {
   const name: HTMLInputElement | null = document.querySelector('#name');
   const surname: HTMLInputElement | null = document.querySelector('#surname');
@@ -8,6 +10,7 @@ function saveUserInLS(): void {
       surname: `${surname.value}`,
     };
     localStorage.setItem('User', JSON.stringify(user));
+    cleanPage();
   }
 }
 
