@@ -1,7 +1,7 @@
 export type BtnProps = {
   className?: string;
   text?: string;
-  disabled: boolean;
+  disabled?: boolean;
   onClick?: () => void;
   parent?: HTMLElement;
 };
