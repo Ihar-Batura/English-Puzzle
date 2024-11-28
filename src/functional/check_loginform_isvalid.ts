@@ -16,6 +16,9 @@ function isLoginFormValid() {
   if (formBtn) {
     if (counter === inputsList.length) {
       formBtn.removeAttribute('disabled');
+      formBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+      });
     } else {
       formBtn.setAttribute('disabled', 'true');
     }

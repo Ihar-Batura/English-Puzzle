@@ -4,6 +4,7 @@ import Input from '../../components/input';
 import Button from '../../components/button';
 import Span from '../../components/span';
 import isValidInput from '../../functional/check_form_input';
+import saveUserInLS from '../../functional/save_username_in_ ls';
 
 function createLoginForm() {
   const form = Form({ autocomplete: 'off', className: 'page-login__form' });
@@ -60,7 +61,7 @@ function createLoginForm() {
     className: 'login-btn',
     text: 'LogIn',
     disabled: true,
-    onClick: () => console.log('clicked'),
+    onClick: () => saveUserInLS(),
     parent: form,
   });
 
