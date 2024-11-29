@@ -242,7 +242,8 @@ button:disabled:hover {
 
 /*   Start window   */
 
-.header {
+.header,
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,7 +251,14 @@ button:disabled:hover {
   height: 60px;
   padding: 12px 20px;
   background-color: var(--clr-background);
+}
+
+.header {
   border-bottom: 2px solid var(--clr-border-color);
+}
+
+.footer {
+  border-top: 2px solid var(--clr-border-color);
 }
 
 .logo {
@@ -269,4 +277,10 @@ button:disabled:hover {
 
 .logout-btn:hover {
   border-color: var(--clr-dark);
+}
+
+.footer-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--clr-dark);
 }

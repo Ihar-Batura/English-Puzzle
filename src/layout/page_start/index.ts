@@ -1,6 +1,6 @@
 import createDiv from '../../components/div';
-
 import createHeader from '../header';
+import createFooter from '../footer';
 
 function createStartPage() {
   const body: HTMLBodyElement | null = document.querySelector('body');
@@ -8,8 +8,9 @@ function createStartPage() {
     const wrapper = createDiv({ className: 'wrapper' });
 
     const header = createHeader();
+    const footer = createFooter();
 
-    wrapper.append(header);
+    wrapper.append(header, footer);
 
     body.append(wrapper);
   }
