@@ -1,12 +1,15 @@
-import cleanPage from './clean_page';
+type UserObj = {
+  name: string;
+  surname: string;
+};
 
-function getUserFromLS(): void {
+function getUserFromLS(): UserObj | undefined {
   const user: string | null = localStorage.getItem('User');
   if (user) {
     const userData = JSON.parse(user);
-    console.log(`Hello ${userData.name} ${userData.surname}`);
-    cleanPage();
+    return userData;
   }
+  return;
 }
 
 export default getUserFromLS;

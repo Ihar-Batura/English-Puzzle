@@ -1,9 +1,12 @@
 .button {
   display: block;
+  width: 120px;
+  font-size: 14px;
+  padding: 12px 30px;
   text-align: center;
   line-height: 110%;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   border-radius: 12px;
   transition: 0.5s ease-out;
   cursor: pointer;

@@ -1,10 +1,11 @@
 :root {
   /* colors */
-  --clr-valid: green;
+  --clr-valid: rgb(11, 185, 11);
   --clr-invalid: red;
   --clr-white: white;
   --clr-dark: black;
   --clr-background: rgba(230, 230, 250, 0.9);
+  --clr-background-light: rgba(230, 230, 250, 0.55);
   --clr-border-color: rgb(105, 105, 105);
 }
 
@@ -158,7 +159,6 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  text-transform: uppercase;
 }
 
 p {
@@ -218,8 +218,6 @@ input {
 }
 
 .login-btn {
-  width: 120px;
-  padding: 12px 30px;
   margin: 0 auto;
   border: 2px solid var(--clr-dark);
 }
@@ -265,6 +263,7 @@ button:disabled:hover {
   font-size: 18px;
   line-height: 130%;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .logout-btn {
@@ -277,6 +276,38 @@ button:disabled:hover {
 
 .logout-btn:hover {
   border-color: var(--clr-dark);
+}
+
+.main {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 2px;
+  background-color: var(--clr-background-light);
+}
+
+.greetin-text {
+  line-height: 130%;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 30px 0 35px;
+}
+
+.rules-text {
+  width: 100%;
+  max-width: 600px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.start-btn {
+  margin: 170px auto 0;
+  background-color: var(--clr-valid);
+  color: var(--clr-white);
 }
 
 .footer-link {
