@@ -3,5 +3,6 @@ export default interface Ilink {
   className?: string;
   id?: string;
   text?: string;
+  target: string;
   parent?: HTMLElement;
 }

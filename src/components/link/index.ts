@@ -4,6 +4,7 @@ function createLinkElement({
   className,
   id,
   text,
+  target,
   parent,
 }: Ilink): HTMLAnchorElement {
   const a = document.createElement('a');
@@ -18,6 +19,9 @@ function createLinkElement({
   }
   if (text) {
     a.textContent = text;
+  }
+  if (target) {
+    a.setAttribute('target', target);
   }
   if (parent) {
     parent.append(a);

@@ -12,6 +12,7 @@ function createFooter() {
     href: 'https://github.com/Ihar-Batura',
     className: 'footer-link',
     text: 'Ihar Batura',
+    target: '_blank',
   });
 
   footer.append(year, gitLink);
