@@ -5,6 +5,7 @@ import createNewElement from '../../components/element';
 import createFooter from '../footer';
 import getUserFromLS from '../../functional/get_user_from_ls';
 import createButton from '../../components/button';
+import createPageGame from '../page_game';
 
 function createStartPage() {
   const body: HTMLBodyElement | null = document.querySelector('body');
@@ -32,7 +33,12 @@ function createStartPage() {
       parent: main,
     });
 
-    createButton({ className: 'start-btn', text: 'Start', parent: main });
+    createButton({
+      className: 'start-btn',
+      text: 'Start',
+      onClick: createPageGame,
+      parent: main,
+    });
 
     const footer = createFooter();
 
