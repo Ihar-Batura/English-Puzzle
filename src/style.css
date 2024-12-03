@@ -315,3 +315,20 @@ button:disabled:hover {
   text-decoration: none;
   color: var(--clr-dark);
 }
+
+/*  Game page   */
+
+.wrapper {
+  background: url('./assets/img/page_login.jpg') center center / cover;
+}
+
+.hints-container {
+  min-height: 40px;
+  background-color: blue;
+}
+
+.select-levels {
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
