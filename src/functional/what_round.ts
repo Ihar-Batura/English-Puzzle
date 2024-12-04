@@ -3,7 +3,7 @@ function whatRoundChoose(): string {
     document.querySelector('#round-btn');
   if (roundBtn) {
     const round = roundBtn.value;
-    //console.log(level);
+    //console.log(round);
     return round;
   } else {
     return '1';

@@ -5,21 +5,29 @@ import giveLevelData from '../../functional/give_level_data';
 
 function createHintsContainer() {
   const hintsContainer = createDiv({ className: 'hints-container' });
-  const selectLevelsBtn = createSelectElement(
-    'Level',
-    6,
-    'select-levels',
-    'level-btn'
-  );
+  const selectLevelsBtn = createSelectElement({
+    value: 'Level',
+    options: 6,
+    id: 'level-btn',
+    className: 'select-levels',
+  });
+
+  const selectRoundsBtn = createSelectElement({
+    value: 'Round',
+    options: 1,
+    id: 'round-btn',
+    className: 'select-levels',
+  });
+
   let startLevel = whatLevelChoosed();
+  giveLevelData(startLevel);
 
   selectLevelsBtn.addEventListener('change', () => {
     startLevel = whatLevelChoosed();
-    console.log(startLevel);
     giveLevelData(startLevel);
   });
 
-  hintsContainer.append(selectLevelsBtn);
+  hintsContainer.append(selectLevelsBtn, selectRoundsBtn);
   return hintsContainer;
 }
 
