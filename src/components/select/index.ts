@@ -2,11 +2,15 @@ function createSelectElement(
   value: string,
   options: number,
   className?: string,
+  id?: string,
   name?: string
 ): HTMLSelectElement {
   const select = document.createElement('select');
   if (className) {
     select.classList.add(className);
+  }
+  if (id) {
+    select.id = id;
   }
   if (name) {
     select.setAttribute('name', name);
