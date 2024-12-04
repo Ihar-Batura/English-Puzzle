@@ -4,6 +4,7 @@ import { BtnProps } from './types';
 function createButton({
   className,
   text,
+  id,
   disabled,
   onClick,
   parent,
@@ -16,6 +17,9 @@ function createButton({
   }
   if (text) {
     button.textContent = text;
+  }
+  if (id) {
+    button.id = id;
   }
   if (disabled) {
     button.setAttribute('disabled', ' ');
