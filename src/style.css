@@ -373,3 +373,8 @@ button:disabled:hover {
   background-size: contain;
   background-color: var(--clr-hint-btn);
 }
+
+.text-hint {
+  text-align: center;
+  margin: 10px 0;
+}
