@@ -365,13 +365,22 @@ button:disabled:hover {
   background: url(./assets/icon/sound.svg) center no-repeat;
 }
 
+#sound-btn.hidden {
+  display: none;
+}
+
 #translate-btn {
   background: url(./assets/icon/translate.svg) center no-repeat;
   background-color: var(--clr-hint-btn);
 }
 
-#translate-btn.cliked {
+#translate-btn.cliked,
+#audio-btn.cliked {
   background-color: var(--clr-hint-btn-click);
+}
+
+#translate-btn.add-position {
+  margin-left: auto;
 }
 
 #audio-btn {

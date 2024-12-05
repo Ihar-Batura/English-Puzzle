@@ -4,6 +4,7 @@ import whatLevelChoosed from '../../functional/what_level';
 import giveLevelData from '../../functional/give_level_data';
 import createButton from '../../components/button';
 import isShowTextHint from '../../functional/show_text_hint';
+import isShowSoundHint from '../../functional/show_sound_hint';
 
 function createHintsContainer() {
   const hintsContainer = createDiv({ className: 'hints-container' });
@@ -43,6 +44,7 @@ function createHintsContainer() {
   const audioBtn = createButton({
     className: 'hint-btn',
     id: 'audio-btn',
+    onClick: isShowSoundHint,
   });
 
   const imageBtn = createButton({
