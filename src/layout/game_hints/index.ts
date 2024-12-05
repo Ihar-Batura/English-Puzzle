@@ -3,6 +3,7 @@ import createSelectElement from '../../components/select';
 import whatLevelChoosed from '../../functional/what_level';
 import giveLevelData from '../../functional/give_level_data';
 import createButton from '../../components/button';
+import isShowTextHint from '../../functional/show_text_hint';
 
 function createHintsContainer() {
   const hintsContainer = createDiv({ className: 'hints-container' });
@@ -36,6 +37,7 @@ function createHintsContainer() {
   const translateBtn = createButton({
     className: 'hint-btn',
     id: 'translate-btn',
+    onClick: isShowTextHint,
   });
 
   const audioBtn = createButton({

@@ -15,7 +15,6 @@ async function giveLevelData(levelNumber: string) {
   });
 
   console.log(arrOfRounds);
-  console.log(roundsCount);
 }
 
 export default giveLevelData;

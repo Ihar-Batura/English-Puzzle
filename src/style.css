@@ -8,6 +8,7 @@
   --clr-background-light: rgba(230, 230, 250, 0.55);
   --clr-border-color: rgb(105, 105, 105);
   --clr-hint-btn: rgb(122, 122, 199);
+  --clr-hint-btn-click: rgb(186, 186, 235);
 }
 
 /**
@@ -369,6 +370,10 @@ button:disabled:hover {
   background-color: var(--clr-hint-btn);
 }
 
+#translate-btn.cliked {
+  background-color: var(--clr-hint-btn-click);
+}
+
 #audio-btn {
   background: url(./assets/icon/microphone.svg) center no-repeat;
   background-color: var(--clr-hint-btn);
@@ -383,6 +388,10 @@ button:disabled:hover {
 .text-hint {
   text-align: center;
   margin: 10px 0;
+}
+
+.text-hint.hidden {
+  color: transparent;
 }
 
 .game-board {
