@@ -378,3 +378,13 @@ button:disabled:hover {
   text-align: center;
   margin: 10px 0;
 }
+
+.game-board {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+.game-board__row {
+  height: 40px;
+}
