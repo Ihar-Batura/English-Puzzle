@@ -1,6 +1,6 @@
 import createSelectElement from '../components/select';
 
-async function giveLevelData(levelNumber: string) {
+async function giveLevelData(levelNumber: string, roundNumber: string) {
   const filePath = `/data/wordCollectionLevel${levelNumber}.json`;
   const result = await fetch(filePath);
   const data = await result.json();
@@ -14,7 +14,7 @@ async function giveLevelData(levelNumber: string) {
     id: 'round-btn',
   });
 
-  console.log(arrOfRounds);
+  console.log(arrOfRounds[+roundNumber - 1]);
 }
 
 export default giveLevelData;

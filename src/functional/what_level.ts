@@ -1,4 +1,4 @@
-function whatLevelChoosed(): string {
+function whatLevelChoose(): string {
   const levelBtn: HTMLSelectElement | null =
     document.querySelector('#level-btn');
   if (levelBtn) {
@@ -10,4 +10,4 @@ function whatLevelChoosed(): string {
   }
 }
 
-export default whatLevelChoosed;
+export default whatLevelChoose;
