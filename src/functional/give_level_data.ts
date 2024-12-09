@@ -18,7 +18,7 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
   });
 
   console.log(arrOfRounds[+roundNumber - 1]);
-  showLevelData(arrOfRounds[+roundNumber - 1].levelData); // показывает открытую картину с описанием
+  //showLevelData(arrOfRounds[+roundNumber - 1].levelData); // показывает открытую картину с описанием
 }
 
 export default giveLevelData;
