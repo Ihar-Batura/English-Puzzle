@@ -1,3 +1,5 @@
+import showLevelData from './show_level_data';
+
 import createSelectElement from '../components/select';
 
 async function giveLevelData(levelNumber: string, roundNumber: string) {
@@ -16,6 +18,7 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
   });
 
   console.log(arrOfRounds[+roundNumber - 1]);
+  showLevelData(arrOfRounds[+roundNumber - 1].levelData);
 }
 
 export default giveLevelData;
