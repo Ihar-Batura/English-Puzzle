@@ -410,11 +410,10 @@ option.finish {
 .game-board {
   max-width: 700px;
   margin: 0 auto;
-  border: 1px solid red;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: aqua; */
+  background-color: aqua;
 }
 
 .game-board__row {
