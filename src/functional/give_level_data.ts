@@ -12,6 +12,7 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
     value: 'Round',
     options: roundsCount,
     id: 'round-btn',
+    selected: roundNumber,
   });
 
   console.log(arrOfRounds[+roundNumber - 1]);

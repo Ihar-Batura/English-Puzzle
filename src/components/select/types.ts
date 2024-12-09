@@ -4,4 +4,5 @@ export type SelectProps = {
   id: string;
   className?: string;
   name?: string;
+  selected?: string;
 };
