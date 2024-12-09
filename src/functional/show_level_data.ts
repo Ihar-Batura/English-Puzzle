@@ -2,9 +2,10 @@ import showPicture from './show_picture';
 import makeHintBtnsDisabled from './make_hintBtns_disabled';
 import transformBtn from './transform_button';
 
-interface ILevelData {
+export interface ILevelData {
   author: string;
   cutSrc: string;
+  id: string;
   imageSrc: string;
   name: string;
   year: string;

@@ -1,7 +1,6 @@
 import cleanMainContainer from '../../functional/clean_main_container';
 import createHintsContainer from '../game_hints';
 import createDiv from '../../components/div';
-import createGameBoard from '../game_board';
 import createSolutionButtons from '../buttons_solution';
 
 function createPageGame() {
@@ -14,7 +13,7 @@ function createPageGame() {
       text: 'Здесь будет подсказка',
     });
 
-    const gameBoard = createGameBoard();
+    const gameBoard = createDiv({ className: 'game-board' });
 
     const gameWords = createDiv({ className: 'game-words' });
 

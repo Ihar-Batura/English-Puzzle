@@ -1,4 +1,5 @@
-import showLevelData from './show_level_data';
+//import showLevelData from './show_level_data';
+import startRound from './start_round';
 
 import createSelectElement from '../components/select';
 
@@ -19,6 +20,8 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
 
   console.log(arrOfRounds[+roundNumber - 1]);
   //showLevelData(arrOfRounds[+roundNumber - 1].levelData); // показывает открытую картину с описанием
+
+  startRound(arrOfRounds[+roundNumber - 1]);
 }
 
 export default giveLevelData;

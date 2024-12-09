@@ -1,28 +1,44 @@
-interface IStartRound {
-  cutSrc: string;
-  id: string;
-  imageSrc: string;
-  words: object[];
+import { ILevelData } from './show_level_data';
+import showPicture from './show_picture';
+import createWordRows from '../layout/rows_of_words.ts';
+
+export interface Iwords {
+  audioExample: string;
+  id: number;
+  textExample: string;
+  textExampleTranslate: string;
+  word: string;
+  wordTranslate: string;
 }
 
-function startRound({ cutSrc, id, imageSrc, words }: IStartRound) {
-  const textHint: HTMLDivElement | null = document.querySelector('.text-hint');
-  if (textHint) {
-    console.log(textHint);
-  }
+interface IStartRound {
+  levelData: ILevelData;
+  words: Iwords[];
+}
 
-  const pictureBox: HTMLDivElement | null =
-    document.querySelector('.game-board');
-  if (pictureBox) {
-    const windowWidth: number = window.innerWidth;
-    if (windowWidth > 768) {
-      pictureBox.style.backgroundImage = `url(public/images/${imageSrc})`; // нужно будет изменить public/images/ на /images/ пока так работает
-    } else {
-      pictureBox.style.backgroundImage = `url(public/images/${cutSrc})`;
-    }
-  }
-  console.log(id); // временно, потом нужно подумать где использовать id
+function startRound({ levelData, words }: IStartRound) {
+  showPicture(levelData.cutSrc, levelData.imageSrc);
+  createWordRows(words);
+
+  console.log(levelData);
   console.log(words);
+  //   const textHint: HTMLDivElement | null = document.querySelector('.text-hint');
+  //   if (textHint) {
+  //     console.log(textHint);
+  //   }
+
+  //   const pictureBox: HTMLDivElement | null =
+  //     document.querySelector('.game-board');
+  //   if (pictureBox) {
+  //     const windowWidth: number = window.innerWidth;
+  //     if (windowWidth > 768) {
+  //       pictureBox.style.backgroundImage = `url(public/images/${imageSrc})`; // нужно будет изменить public/images/ на /images/ пока так работает
+  //     } else {
+  //       pictureBox.style.backgroundImage = `url(public/images/${cutSrc})`;
+  //     }
+  //   }
+  //   console.log(id); // временно, потом нужно подумать где использовать id
+  //   console.log(words);
 }
 
 export default startRound;
