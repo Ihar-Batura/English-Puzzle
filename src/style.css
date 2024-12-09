@@ -416,7 +416,17 @@ option.finish {
 }
 
 .game-board__row {
+  display: flex;
   height: 40px;
+  color: var(--clr-white);
+}
+
+.game-board__row-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 3px 1px 3px var(--clr-dark);
+  border: 1px solid red;
 }
 
 .game-words {
