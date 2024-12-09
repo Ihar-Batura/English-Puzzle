@@ -1,4 +1,5 @@
 import showPicture from './show_picture';
+import makeHintBtnsDisabled from './make_hintBtns_disabled';
 
 interface ILevelData {
   author: string;
@@ -24,6 +25,7 @@ function showLevelData({
   }
 
   showPicture(cutSrc, imageSrc);
+  makeHintBtnsDisabled('add');
   console.log(id); // временно, потом нужно подумать где использовать id
 }
 
