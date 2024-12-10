@@ -417,6 +417,7 @@ option.finish {
 
 .game-board__row {
   display: flex;
+
   height: 40px;
   color: var(--clr-white);
 }
