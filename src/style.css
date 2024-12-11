@@ -409,6 +409,7 @@ option.finish {
 
 .game-board {
   max-width: 700px;
+  height: 400px;
   margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -428,7 +429,7 @@ option.finish {
   align-items: center;
   height: 40px;
   text-shadow: 3px 1px 3px var(--clr-dark);
-  border: 1px solid red;
+  border: 1px solid var(--clr-background);
 }
 
 .game-words {
