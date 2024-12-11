@@ -3,7 +3,9 @@ import showPicture from './show_picture';
 import createWordRow from '../layout/rows_of_words.ts';
 import addBackgroundToPuzzle from './add_background_to_puzzle.ts';
 import addPuzzlesToAnswerRow from './add_puzzles_to_answer_row.ts';
+import addAudio from './add_audio_hint.ts';
 import addTextHint from './add_text_hint.ts';
+import mixPuzzles from './mix_puzzles.ts';
 
 export interface Iwords {
   audioExample: string;
@@ -20,8 +22,11 @@ interface IStartRound {
 }
 
 function startRound({ levelData, words }: IStartRound) {
+  addAudio(words, 0);
   addTextHint(words, 0);
   addPuzzlesToAnswerRow(0, words, levelData);
+  mixPuzzles();
+
   //showPicture(levelData.cutSrc, levelData.imageSrc);
 
   ///createWordRow(8, words);

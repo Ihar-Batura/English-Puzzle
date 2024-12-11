@@ -10,12 +10,12 @@ function createPageGame() {
     const hintsContainer = createHintsContainer();
     const textHint = createDiv({
       className: 'text-hint',
-      text: 'Здесь будет подсказка',
+      text: '',
     });
 
     const gameBoard = createDiv({ className: 'game-board' });
 
-    const gameWords = createDiv({ className: 'game-words' });
+    const gameWords = createDiv({ className: 'game-words', id: 'answer-row' });
 
     const solutionBtn = createSolutionButtons();
 
