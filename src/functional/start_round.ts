@@ -1,6 +1,6 @@
 import { ILevelData } from './show_level_data';
 import showPicture from './show_picture';
-import createWordRows from '../layout/rows_of_words.ts';
+import createWordRow from '../layout/rows_of_words.ts';
 
 export interface Iwords {
   audioExample: string;
@@ -17,8 +17,8 @@ interface IStartRound {
 }
 
 function startRound({ levelData, words }: IStartRound) {
-  showPicture(levelData.cutSrc, levelData.imageSrc);
-  createWordRows(words);
+  //showPicture(levelData.cutSrc, levelData.imageSrc);
+  createWordRow(0, words);
 
   console.log(levelData);
   console.log(words);

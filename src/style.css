@@ -413,11 +413,11 @@ option.finish {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: var(--clr-hint-btn);
 }
 
 .game-board__row {
   display: flex;
-
   height: 40px;
   color: var(--clr-white);
 }
@@ -426,6 +426,7 @@ option.finish {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 40px;
   text-shadow: 3px 1px 3px var(--clr-dark);
   border: 1px solid red;
 }
