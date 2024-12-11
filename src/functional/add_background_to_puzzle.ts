@@ -1,9 +1,7 @@
 import { ILevelData } from './show_level_data';
 
 function addBackgroundToPuzzle(levelData: ILevelData, rowNumber: number) {
-  const row: HTMLDivElement | null = document.querySelector(
-    `#row_${rowNumber}`
-  );
+  const row: HTMLElement | null = document.getElementById('answer-row');
   if (row) {
     const rowWidth: number = row.offsetWidth;
     const picturePath: string =
