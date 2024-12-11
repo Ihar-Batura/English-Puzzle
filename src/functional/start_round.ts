@@ -1,7 +1,9 @@
 import { ILevelData } from './show_level_data';
 import showPicture from './show_picture';
 import createWordRow from '../layout/rows_of_words.ts';
-import addBackgroundToPuzzle from './add_backgr_to_puzzle.ts';
+import addBackgroundToPuzzle from './add_background_to_puzzle.ts';
+import addPuzzlesToAnswerRow from './add_puzzles_to_answer_row.ts';
+import addTextHint from './add_text_hint.ts';
 
 export interface Iwords {
   audioExample: string;
@@ -18,30 +20,13 @@ interface IStartRound {
 }
 
 function startRound({ levelData, words }: IStartRound) {
+  addTextHint(words, 0);
+  addPuzzlesToAnswerRow(0, words, levelData);
   //showPicture(levelData.cutSrc, levelData.imageSrc);
-  createWordRow(0, words);
-  createWordRow(1, words);
-  createWordRow(2, words);
-  createWordRow(3, words);
-  createWordRow(4, words);
-  createWordRow(5, words);
-  createWordRow(6, words);
-  createWordRow(7, words);
-  createWordRow(8, words);
-  createWordRow(9, words);
-  addBackgroundToPuzzle(levelData, 0);
-  addBackgroundToPuzzle(levelData, 1);
-  addBackgroundToPuzzle(levelData, 2);
-  addBackgroundToPuzzle(levelData, 3);
-  addBackgroundToPuzzle(levelData, 4);
-  addBackgroundToPuzzle(levelData, 5);
-  addBackgroundToPuzzle(levelData, 6);
-  addBackgroundToPuzzle(levelData, 7);
-  addBackgroundToPuzzle(levelData, 8);
-  addBackgroundToPuzzle(levelData, 9);
 
-  console.log(levelData);
-  console.log(words);
+  ///createWordRow(8, words);
+  //createWordRow(9, words);
+
   //   const textHint: HTMLDivElement | null = document.querySelector('.text-hint');
   //   if (textHint) {
   //     console.log(textHint);
