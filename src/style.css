@@ -379,7 +379,8 @@ option.finish {
 }
 
 #translate-btn.cliked,
-#audio-btn.cliked {
+#audio-btn.cliked,
+#image-btn.cliked {
   background-color: var(--clr-hint-btn-click);
 }
 
@@ -408,19 +409,19 @@ option.finish {
 }
 
 .game-board {
-  max-width: 700px;
-  height: 400px;
+  max-width: 702px;
+  height: 402px;
   margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: var(--clr-hint-btn);
+  background-color: var(--clr-background-light);
+  border: 1px solid var(--clr-border-color);
 }
 
 .game-board__row {
   display: flex;
   height: 40px;
-  color: var(--clr-white);
 }
 
 .game-board__row-word {
@@ -428,15 +429,18 @@ option.finish {
   justify-content: center;
   align-items: center;
   height: 40px;
+  color: var(--clr-white);
   text-shadow: 3px 1px 3px var(--clr-dark);
   border: 1px solid var(--clr-background);
 }
 
 .game-words {
-  max-width: 700px;
-  height: 40px;
+  display: flex;
+  max-width: 702px;
+  height: 42px;
   margin: 20px auto;
-  background-color: rebeccapurple;
+  background-color: var(--clr-background-light);
+  border: 1px solid var(--clr-border-color);
 }
 
 .btns-solution__container {
@@ -459,4 +463,25 @@ option.finish {
 }
 .check-solution__btn:hover {
   border-color: var(--clr-dark);
+}
+
+.image-hint-active {
+  background: var(--clr-hint-btn-click) !important;
+}
+
+#sound-btn.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  from {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.85);
+  }
 }
