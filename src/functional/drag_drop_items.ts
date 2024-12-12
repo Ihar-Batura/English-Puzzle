@@ -19,10 +19,15 @@ function dragDropItems(rowNumber: number) {
     });
     element.addEventListener('click', function () {
       if (firstContainer && secondContainer) {
-        if (element.parentElement === firstContainer) {
+        if (
+          element.parentElement === firstContainer &&
+          element.hasAttribute('draggable')
+        ) {
           secondContainer.append(element);
         } else {
-          firstContainer.append(element);
+          if (element.hasAttribute('draggable')) {
+            firstContainer.append(element);
+          }
         }
       }
       turnCheckBtn();

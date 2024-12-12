@@ -7,6 +7,7 @@ import addAudio from './add_audio_hint.ts';
 import addTextHint from './add_text_hint.ts';
 import mixPuzzles from './mix_puzzles.ts';
 import dragDropItems from './drag_drop_items.ts';
+import turnCheckBtn from './turn_btn_check.ts';
 
 export interface Iwords {
   audioExample: string;
@@ -25,10 +26,11 @@ interface IStartRound {
 function startRound({ levelData, words }: IStartRound) {
   addAudio(words, 0);
   addTextHint(words, 0);
+  createWordRow(0);
   addPuzzlesToAnswerRow(0, words, levelData);
   mixPuzzles();
-  createWordRow(0);
   dragDropItems(0);
+  turnCheckBtn();
 
   //showPicture(levelData.cutSrc, levelData.imageSrc);
 }

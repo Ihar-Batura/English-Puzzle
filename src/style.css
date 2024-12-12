@@ -435,6 +435,14 @@ option.finish {
   cursor: pointer;
 }
 
+.game-board__row-word.valid {
+  border: 1px solid var(--clr-valid);
+}
+
+.game-board__row-word.invalid {
+  border: 1px solid var(--clr-invalid);
+}
+
 .game-words {
   display: flex;
   max-width: 702px;
@@ -455,8 +463,12 @@ option.finish {
   min-width: 100px;
   padding: 8px 12px;
   color: var(--clr-white);
-  background-color: var(--clr-valid);
+
   border: 2px solid var(--clr-border-color);
+}
+
+.solution-btn {
+  background-color: var(--clr-valid);
 }
 
 .solution-btn:hover {
@@ -464,6 +476,9 @@ option.finish {
 }
 .check-solution__btn:hover {
   border-color: var(--clr-dark);
+}
+.check-solution__btn:not(:disabled) {
+  background-color: var(--clr-valid);
 }
 
 .image-hint-active {
