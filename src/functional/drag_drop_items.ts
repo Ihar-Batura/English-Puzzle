@@ -13,6 +13,16 @@ function dragDropItems(rowNumber: number) {
   puzzleItems.forEach((element) => {
     element.addEventListener('dragstart', (event) => {
       dragStart(event);
+      //DragEvent
+    });
+    element.addEventListener('click', function () {
+      if (firstContainer && secondContainer) {
+        if (element.parentElement === firstContainer) {
+          secondContainer.append(element);
+        } else {
+          firstContainer.append(element);
+        }
+      }
     });
   });
 
@@ -32,17 +42,17 @@ function dragDropItems(rowNumber: number) {
     });
   }
 
-  function dragOver(event: any) {
-    //console.log(event);
+  function dragOver(event: DragEvent): void {
     event.preventDefault();
   }
+  // Нужно будет разобраться как типизировать DragEvent
 
-  function dragStart(event: any) {
+  function dragStart(event: any): void {
     event.dataTransfer.setData('id', event.target.id);
     dragOverStart();
   }
 
-  function drop(event: any) {
+  function drop(event: any): void {
     let itemId = event.dataTransfer.getData('id');
     console.log(itemId);
     if (
