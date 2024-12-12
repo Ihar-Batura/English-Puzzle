@@ -6,6 +6,7 @@ import addPuzzlesToAnswerRow from './add_puzzles_to_answer_row.ts';
 import addAudio from './add_audio_hint.ts';
 import addTextHint from './add_text_hint.ts';
 import mixPuzzles from './mix_puzzles.ts';
+import dragDropItems from './drag_drop_items.ts';
 
 export interface Iwords {
   audioExample: string;
@@ -26,29 +27,10 @@ function startRound({ levelData, words }: IStartRound) {
   addTextHint(words, 0);
   addPuzzlesToAnswerRow(0, words, levelData);
   mixPuzzles();
+  createWordRow(0);
+  dragDropItems(0);
 
   //showPicture(levelData.cutSrc, levelData.imageSrc);
-
-  ///createWordRow(8, words);
-  //createWordRow(9, words);
-
-  //   const textHint: HTMLDivElement | null = document.querySelector('.text-hint');
-  //   if (textHint) {
-  //     console.log(textHint);
-  //   }
-
-  //   const pictureBox: HTMLDivElement | null =
-  //     document.querySelector('.game-board');
-  //   if (pictureBox) {
-  //     const windowWidth: number = window.innerWidth;
-  //     if (windowWidth > 768) {
-  //       pictureBox.style.backgroundImage = `url(public/images/${imageSrc})`; // нужно будет изменить public/images/ на /images/ пока так работает
-  //     } else {
-  //       pictureBox.style.backgroundImage = `url(public/images/${cutSrc})`;
-  //     }
-  //   }
-  //   console.log(id); // временно, потом нужно подумать где использовать id
-  //   console.log(words);
 }
 
 export default startRound;

@@ -432,6 +432,7 @@ option.finish {
   color: var(--clr-white);
   text-shadow: 3px 1px 3px var(--clr-dark);
   border: 1px solid var(--clr-background);
+  cursor: pointer;
 }
 
 .game-words {

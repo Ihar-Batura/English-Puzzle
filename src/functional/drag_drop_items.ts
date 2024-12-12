@@ -1,3 +1,5 @@
+import turnCheckBtn from './turn_btn_check';
+
 function dragDropItems(rowNumber: number) {
   const firstContainer: HTMLElement | null =
     document.getElementById('answer-row');
@@ -23,6 +25,7 @@ function dragDropItems(rowNumber: number) {
           firstContainer.append(element);
         }
       }
+      turnCheckBtn();
     });
   });
 
@@ -60,6 +63,7 @@ function dragDropItems(rowNumber: number) {
       event.target.id === `row_${rowNumber}`
     ) {
       event.target.append(document.getElementById(itemId));
+      turnCheckBtn();
     }
     dragOverEnd();
   }
