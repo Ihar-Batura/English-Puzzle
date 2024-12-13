@@ -5,9 +5,11 @@ import isShowSoundHint from '../../functional/show_sound_hint';
 import createButtonsLevel from '../buttons_level';
 import isShowPuzzlesBkg from '../../functional/is_show_puzzles_bg';
 import playAudioHint from '../../functional/play_audio_hint';
+import getUserHintSateFromLS from '../../functional/get_hits_state_from_ls';
 
 function createHintsContainer() {
   const hintsContainer = createDiv({ className: 'hints-container' });
+  const hintsState = getUserHintSateFromLS();
 
   createButtonsLevel(hintsContainer);
 
@@ -35,6 +37,17 @@ function createHintsContainer() {
     onClick: isShowPuzzlesBkg,
   });
 
+  if (hintsState) {
+    if (hintsState.text === false) {
+      translateBtn.classList.add('cliked');
+    }
+    if (hintsState.audio === false) {
+      audioBtn.classList.add('cliked');
+    }
+    if (hintsState.image === false) {
+      imageBtn.classList.add('cliked');
+    }
+  }
   hintsContainer.append(soundBtn, translateBtn, audioBtn, imageBtn);
   return hintsContainer;
 }

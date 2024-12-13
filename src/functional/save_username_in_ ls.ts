@@ -14,7 +14,7 @@ function saveUserInLS(): void {
     };
     localStorage.setItem('UserPuzzle', JSON.stringify(user));
     saveCompleteRoundsInLS();
-    saveHintsSateInLs();
+    saveHintsSateInLs({ audio: true, text: true, image: true });
     saveLastRoundsInLS();
     cleanPage();
   }
