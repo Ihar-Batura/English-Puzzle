@@ -3,6 +3,7 @@ function cleanGameBoard() {
     document.querySelector('.game-board');
   if (gameBoard) {
     gameBoard.innerHTML = '';
+    gameBoard.style.backgroundImage = '';
   }
 }
 

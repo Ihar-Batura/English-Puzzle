@@ -1,3 +1,5 @@
+import nextRowRoundLevel from './next_row_round_level';
+
 function clickBtn(): void {
   const btn: HTMLButtonElement | null = document.querySelector(
     '.check-solution__btn'
@@ -28,6 +30,9 @@ function clickBtn(): void {
         });
       }
       setTimeout(deleteHintBorder, 1500);
+    }
+    if (btn.innerText === 'Continue') {
+      nextRowRoundLevel();
     }
   }
 }

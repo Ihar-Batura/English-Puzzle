@@ -1,6 +1,8 @@
 import showPicture from './show_picture';
 import makeHintBtnsDisabled from './make_hintBtns_disabled';
 import transformBtn from './transform_button';
+import cleanGameBoard from './clean_game_board';
+import turnSolutionBtn from './turn_btn_solution';
 
 export interface ILevelData {
   author: string;
@@ -17,11 +19,11 @@ function showLevelData({ author, cutSrc, imageSrc, name, year }: ILevelData) {
   if (infoAboutPicture) {
     infoAboutPicture.innerText = `${name} ${author} ${year}`;
   }
-
+  cleanGameBoard();
   showPicture(cutSrc, imageSrc);
   makeHintBtnsDisabled('add');
   transformBtn('solution-btn', 'Results');
-  transformBtn('check-solution__btn', 'Continue'); // нужно добавить стили для выделения кнопки с результатами
+  turnSolutionBtn(false);
 }
 
 export default showLevelData;

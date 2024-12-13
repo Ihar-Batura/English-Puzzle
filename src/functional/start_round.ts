@@ -1,7 +1,5 @@
 import { ILevelData } from './show_level_data';
-import showPicture from './show_picture';
 import createWordRow from '../layout/rows_of_words.ts';
-import addBackgroundToPuzzle from './add_background_to_puzzle.ts';
 import addPuzzlesToAnswerRow from './add_puzzles_to_answer_row.ts';
 import addAudio from './add_audio_hint.ts';
 import addTextHint from './add_text_hint.ts';
@@ -24,13 +22,13 @@ interface IStartRound {
   words: Iwords[];
 }
 
-function startRound({ levelData, words }: IStartRound) {
-  addAudio(words, 0);
-  addTextHint(words, 0);
-  createWordRow(0);
-  addPuzzlesToAnswerRow(0, words, levelData);
+function startRound({ levelData, words }: IStartRound, roundNumber: number) {
+  addAudio(words, roundNumber);
+  addTextHint(words, roundNumber);
+  createWordRow(roundNumber);
+  addPuzzlesToAnswerRow(roundNumber, words, levelData);
   mixPuzzles();
-  dragDropItems(0);
+  dragDropItems(roundNumber);
   turnCheckBtn();
   turnSolutionBtn(false);
 
