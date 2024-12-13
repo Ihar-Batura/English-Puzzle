@@ -4,7 +4,7 @@ type UserObj = {
 };
 
 function getUserFromLS(): UserObj | undefined {
-  const user: string | null = localStorage.getItem('User');
+  const user: string | null = localStorage.getItem('UserPuzzle');
   if (user) {
     const userData = JSON.parse(user);
     return userData;
