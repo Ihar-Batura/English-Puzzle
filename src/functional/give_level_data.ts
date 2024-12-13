@@ -13,6 +13,13 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
   const roundsCount = data.roundsCount;
 
   createSelectElement({
+    value: 'Level',
+    options: 6,
+    id: 'level-btn',
+    selected: levelNumber,
+  });
+
+  createSelectElement({
     value: 'Round',
     options: roundsCount,
     id: 'round-btn',

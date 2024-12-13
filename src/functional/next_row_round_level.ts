@@ -4,6 +4,8 @@ import startRound from './start_round';
 import showLevelData from './show_level_data';
 import giveLevelData from './give_level_data';
 import transformBtn from './transform_button';
+import nextRound from './next_round';
+import saveLastRoundsInLS from './save_last_round_to_LS';
 
 function nextRowRoundLevel() {
   const level: string = whatLevelChoose();
@@ -11,14 +13,12 @@ function nextRowRoundLevel() {
   const gameRow: number = document.querySelectorAll(
     '.game-board .game-board__row'
   ).length;
-  console.log(round, gameRow);
 
   async function getRoundData(level: string, round: string, gameRow: number) {
     const filePath = `/data/wordCollectionLevel${level}.json`;
     const result = await fetch(filePath);
     const data = await result.json();
     const roundData = data.rounds[+round - 1];
-    console.log(roundData);
 
     if (gameRow > 0 && gameRow <= 9) {
       startRound(roundData, gameRow);
@@ -35,8 +35,11 @@ function nextRowRoundLevel() {
     }
   }
 
+  const nextLevelRound: string[] = nextRound(level, round);
+
   if (gameRow === 0) {
-    giveLevelData(level, `${+round + 1}`);
+    giveLevelData(nextLevelRound[0], nextLevelRound[1]);
+    saveLastRoundsInLS(nextLevelRound[0], nextLevelRound[1]);
     transformBtn('solution-btn', 'Solution');
     transformBtn('check-solution__btn', 'Check');
   } else {
