@@ -1,6 +1,8 @@
 import transformBtn from './transform_button';
 import deleteDraggableAndBk from './delete_draggable_and_bk';
 import turnSolutionBtn from './turn_btn_solution';
+import isShowTextHint from './show_text_hint';
+import isShowSoundHint from './show_sound_hint';
 
 function isSentenceRight(): void {
   const gameRows: NodeListOf<Element> =
@@ -24,6 +26,8 @@ function isSentenceRight(): void {
     transformBtn('check-solution__btn', 'Continue');
     deleteDraggableAndBk();
     turnSolutionBtn(true);
+    isShowTextHint(true);
+    isShowSoundHint(true);
   }
 }
 

@@ -1,7 +1,4 @@
-import isBtnPush from './is_btn_push';
-
-function isShowPuzzlesBkg() {
-  isBtnPush('image-btn');
+function isShowPuzzlesBkg(value?: boolean) {
   const btn: HTMLButtonElement | null = document.querySelector('#image-btn');
   if (btn) {
     const gameBoardRows: NodeListOf<Element> =
@@ -13,7 +10,7 @@ function isShowPuzzlesBkg() {
       `#${lastRow} .game-board__row-word, .game-words .game-board__row-word`
     );
 
-    if (btn.classList.value.includes('cliked')) {
+    if (btn.classList.value.includes('cliked') || value === false) {
       answerRowElements.forEach((el) => {
         el.classList.add('image-hint-active');
       });

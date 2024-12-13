@@ -7,6 +7,7 @@ import mixPuzzles from './mix_puzzles.ts';
 import dragDropItems from './drag_drop_items.ts';
 import turnCheckBtn from './turn_btn_check.ts';
 import turnSolutionBtn from './turn_btn_solution.ts';
+import isShowHintsEveryRow from './is_show_hints_every_row.ts';
 
 export interface Iwords {
   audioExample: string;
@@ -31,6 +32,7 @@ function startRound({ levelData, words }: IStartRound, roundNumber: number) {
   dragDropItems(roundNumber);
   turnCheckBtn();
   turnSolutionBtn(false);
+  isShowHintsEveryRow();
 
   //showPicture(levelData.cutSrc, levelData.imageSrc);
 }
