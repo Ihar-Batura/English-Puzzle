@@ -17,7 +17,6 @@ function mixPuzzles(): void {
         answerRow.insertBefore(puzzlesList[i * 2], puzzlesList[0]);
       }
     }
-    console.log(listLength, steps);
   }
 }
 

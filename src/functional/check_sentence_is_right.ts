@@ -1,5 +1,6 @@
 import transformBtn from './transform_button';
 import deleteDraggableAndBk from './delete_draggable_and_bk';
+import turnSolutionBtn from './turn_btn_solution';
 
 function isSentenceRight(): void {
   const gameRows: NodeListOf<Element> =
@@ -22,6 +23,7 @@ function isSentenceRight(): void {
   if (isCorrect) {
     transformBtn('check-solution__btn', 'Continue');
     deleteDraggableAndBk();
+    turnSolutionBtn(true);
   }
 }
 

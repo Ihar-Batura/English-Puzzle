@@ -463,11 +463,10 @@ option.finish {
   min-width: 100px;
   padding: 8px 12px;
   color: var(--clr-white);
-
   border: 2px solid var(--clr-border-color);
 }
 
-.solution-btn {
+.solution-btn:not(:disabled) {
   background-color: var(--clr-valid);
 }
 
