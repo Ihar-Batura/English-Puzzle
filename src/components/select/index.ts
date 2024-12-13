@@ -28,6 +28,9 @@ function createSelectElement({
         if (value) {
           option.innerText = `${value} ${i}`;
         }
+        if (selected && i === +selected) {
+          option.setAttribute('selected', ' ');
+        }
         select.append(option);
       }
     }
