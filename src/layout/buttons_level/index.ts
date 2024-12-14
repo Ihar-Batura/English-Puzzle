@@ -28,7 +28,7 @@ function createButtonsLevel(parent: HTMLElement) {
 
   selectLevelsBtn.addEventListener('change', () => {
     startLevel = whatLevelChoose();
-    startRound = whatRoundChoose();
+    startRound = '1';
     giveLevelData(startLevel, startRound);
   });
 

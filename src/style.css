@@ -289,6 +289,7 @@ button:disabled:hover {
 }
 
 .main {
+  position: relative;
   width: 100%;
   min-height: calc(100vh - 100px);
   margin: 0 auto;
@@ -499,4 +500,59 @@ option.finish {
   to {
     transform: scale(0.85);
   }
+}
+
+/* Page results */
+
+.page-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  z-index: 100;
+  background-color: var(--clr-hint-btn-click);
+}
+
+.result-container {
+  max-width: 700px;
+  padding: 20px;
+  background-color: var(--clr-background);
+  border: 2px solid var(--clr-border-color);
+  border-radius: 6px;
+}
+
+.result-img {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.result-img__description {
+  text-align: center;
+}
+
+.result-know,
+.result-dontknow {
+  font-weight: 600;
+}
+
+.result-item {
+  display: flex;
+  gap: 15px;
+}
+
+.result-item__btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: url(./assets/icon/sound.svg) center no-repeat;
+}
+
+.result-item__text {
+  display: flex;
+  align-items: center;
 }

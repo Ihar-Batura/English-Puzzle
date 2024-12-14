@@ -1,9 +1,12 @@
 import nextRowRoundLevel from './next_row_round_level';
+import deletePageResults from './delete_page_results';
 
 function clickBtn(): void {
   const btn: HTMLButtonElement | null = document.querySelector(
     '.check-solution__btn'
   );
+  const resultContainer: HTMLElement | null =
+    document.querySelector('.result-container');
   if (btn) {
     if (btn.innerText === 'Check') {
       const gameRows: NodeListOf<Element> =
@@ -33,6 +36,9 @@ function clickBtn(): void {
     }
     if (btn.innerText === 'Continue') {
       nextRowRoundLevel();
+      if (resultContainer) {
+        deletePageResults();
+      }
     }
   }
 }
