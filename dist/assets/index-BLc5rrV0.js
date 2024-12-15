@@ -353,7 +353,7 @@ function be(e, t) {
     for (let l = 0; l < i; l += 1) {
       const r = document.getElementById(`${t}_${l}`);
       r &&
-        ((r.style.backgroundImage = `url(images/${o})`),
+        ((r.style.backgroundImage = `url(Images/${o})`),
         (r.style.backgroundSize = `${s}px 400px`),
         (r.style.backgroundPosition = `left ${a}px top ${c}px`),
         (a -= r.offsetWidth));
@@ -633,8 +633,8 @@ function Re(e, t) {
   const n = document.querySelector('.game-board');
   n &&
     (window.innerWidth > 768
-      ? (n.style.backgroundImage = `url(images/${t})`)
-      : (n.style.backgroundImage = `url(images/${e})`));
+      ? (n.style.backgroundImage = `url(Images/${t})`)
+      : (n.style.backgroundImage = `url(Images/${e})`));
 }
 function Ie({ author: e, cutSrc: t, imageSrc: n, name: s, year: o }) {
   const i = document.querySelector('.text-hint');
@@ -786,7 +786,7 @@ async function Te(e, t) {
     i = (await (await fetch(n)).json()).rounds[+t - 1],
     a = R(),
     c = document.querySelector('.result-img');
-  c && (c.style.backgroundImage = `url(images/${i.levelData.cutSrc})`);
+  c && (c.style.backgroundImage = `url(Images/${i.levelData.cutSrc})`);
   const l = document.querySelector('.result-img__description');
   if (
     (l && (l.innerText = `${i.levelData.name} ${i.levelData.author}`),
