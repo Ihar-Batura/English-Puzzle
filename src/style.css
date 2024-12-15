@@ -527,7 +527,10 @@ option.finish {
 }
 
 .result-img {
-  width: 250px;
+  max-width: 250px;
+  height: 140px;
+  border: 1px solid var(--clr-border-color);
+  border-radius: 6px;
   margin: 0 auto;
 }
 

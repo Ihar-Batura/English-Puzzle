@@ -1,8 +1,7 @@
-//import showLevelData from './show_level_data';
 import startRound from './start_round';
 import cleanGameBoard from './clean_game_board';
-
 import createSelectElement from '../components/select';
+import saveResultsToLS from './save_round_results_to_LS';
 
 async function giveLevelData(levelNumber: string, roundNumber: string) {
   const filePath = `/data/wordCollectionLevel${levelNumber}.json`;
@@ -29,6 +28,7 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
   console.log(arrOfRounds[+roundNumber - 1]);
 
   cleanGameBoard();
+  saveResultsToLS();
 
   startRound(arrOfRounds[+roundNumber - 1], 0);
 }

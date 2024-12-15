@@ -1,3 +1,6 @@
+import getRoundResultsFromLS from './get_round_results_from_LS';
+import saveResultsToLS from './save_round_results_to_LS';
+
 function showSolution(): void {
   const gameRows: NodeListOf<Element> =
     document.querySelectorAll('.game-board__row');
@@ -28,6 +31,12 @@ function showSolution(): void {
       }
     }
   }
+
+  const arrRoundResults = getRoundResultsFromLS();
+  const round = +lastGameRowId.split('_')[1];
+  const newResult: [number, boolean] = [round, false];
+
+  saveResultsToLS(arrRoundResults, newResult);
 }
 
 export default showSolution;

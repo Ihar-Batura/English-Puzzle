@@ -33,8 +33,6 @@ function startRound({ levelData, words }: IStartRound, roundNumber: number) {
   turnCheckBtn();
   turnSolutionBtn(false);
   isShowHintsEveryRow();
-
-  //showPicture(levelData.cutSrc, levelData.imageSrc);
 }
 
 export default startRound;
