@@ -6,6 +6,7 @@ import giveLevelData from './give_level_data';
 import transformBtn from './transform_button';
 import nextRound from './next_round';
 import saveLastRoundsInLS from './save_last_round_to_LS';
+import saveCompleteRoundsInLS from './save_complete_Rounds_to_LS';
 
 function nextRowRoundLevel() {
   const level: string = whatLevelChoose();
@@ -24,6 +25,7 @@ function nextRowRoundLevel() {
       startRound(roundData, gameRow);
     }
     if (gameRow > 9) {
+      saveCompleteRoundsInLS(+level - 1, +round);
       showLevelData({
         author: roundData.levelData.author,
         cutSrc: roundData.levelData.cutSrc,
