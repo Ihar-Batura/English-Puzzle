@@ -1,5 +1,4 @@
 import showPicture from './show_picture';
-import makeHintBtnsDisabled from './make_hintBtns_disabled';
 import transformBtn from './transform_button';
 import cleanGameBoard from './clean_game_board';
 import turnSolutionBtn from './turn_btn_solution';
@@ -21,7 +20,6 @@ function showLevelData({ author, cutSrc, imageSrc, name, year }: ILevelData) {
   }
   cleanGameBoard();
   showPicture(cutSrc, imageSrc);
-  makeHintBtnsDisabled('add');
   transformBtn('solution-btn', 'Results');
   turnSolutionBtn(false);
 }
