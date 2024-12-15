@@ -6,6 +6,7 @@ function createSelectElement({
   id,
   className,
   name,
+  selected,
 }: SelectProps): HTMLSelectElement {
   let select: HTMLSelectElement | null = document.querySelector(`#${id}`);
 
@@ -27,6 +28,9 @@ function createSelectElement({
         if (value) {
           option.innerText = `${value} ${i}`;
         }
+        if (selected && i === +selected) {
+          option.setAttribute('selected', ' ');
+        }
         select.append(option);
       }
     }
@@ -38,6 +42,9 @@ function createSelectElement({
         option.setAttribute('value', `${i}`);
         if (value) {
           option.innerText = `${value} ${i}`;
+        }
+        if (selected && i === +selected) {
+          option.setAttribute('selected', ' ');
         }
         select.append(option);
       }

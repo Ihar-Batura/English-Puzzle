@@ -1,65 +1,54 @@
 import createDiv from '../../components/div';
-import createSelectElement from '../../components/select';
-import whatLevelChoosed from '../../functional/what_level';
-import giveLevelData from '../../functional/give_level_data';
 import createButton from '../../components/button';
-import isShowTextHint from '../../functional/show_text_hint';
-import isShowSoundHint from '../../functional/show_sound_hint';
+import clickShowTextHint from '../../functional/click_show_text_hint';
+import clickShowSoundHint from '../../functional/click_show_sound_hint';
+import createButtonsLevel from '../buttons_level';
+import clickShowBackgroundBtn from '../../functional/click_show_background_btn';
+import playAudioHint from '../../functional/play_audio_hint';
+import getUserHintSateFromLS from '../../functional/get_hits_state_from_ls';
 
 function createHintsContainer() {
   const hintsContainer = createDiv({ className: 'hints-container' });
-  const selectLevelsBtn = createSelectElement({
-    value: 'Level',
-    options: 6,
-    id: 'level-btn',
-    className: 'select-levels',
-  });
+  const hintsState = getUserHintSateFromLS();
 
-  const selectRoundsBtn = createSelectElement({
-    value: 'Round',
-    options: 1,
-    id: 'round-btn',
-    className: 'select-levels',
-  });
-
-  let startLevel = whatLevelChoosed();
-  giveLevelData(startLevel);
-
-  selectLevelsBtn.addEventListener('change', () => {
-    startLevel = whatLevelChoosed();
-    giveLevelData(startLevel);
-  });
+  createButtonsLevel(hintsContainer);
 
   const soundBtn = createButton({
     className: 'hint-btn',
     id: 'sound-btn',
+    onClick: playAudioHint,
   });
 
   const translateBtn = createButton({
     className: 'hint-btn',
     id: 'translate-btn',
-    onClick: isShowTextHint,
+    onClick: clickShowTextHint,
   });
 
   const audioBtn = createButton({
     className: 'hint-btn',
     id: 'audio-btn',
-    onClick: isShowSoundHint,
+    onClick: clickShowSoundHint,
   });
 
   const imageBtn = createButton({
     className: 'hint-btn',
     id: 'image-btn',
+    onClick: clickShowBackgroundBtn,
   });
 
-  hintsContainer.append(
-    selectLevelsBtn,
-    selectRoundsBtn,
-    soundBtn,
-    translateBtn,
-    audioBtn,
-    imageBtn
-  );
+  if (hintsState) {
+    if (hintsState.text === false) {
+      translateBtn.classList.add('cliked');
+    }
+    if (hintsState.audio === false) {
+      audioBtn.classList.add('cliked');
+    }
+    if (hintsState.image === false) {
+      imageBtn.classList.add('cliked');
+    }
+  }
+  hintsContainer.append(soundBtn, translateBtn, audioBtn, imageBtn);
   return hintsContainer;
 }
 

@@ -1,6 +1,6 @@
 import createNewElement from '../../components/element';
 import createButton from '../../components/button';
-import deleteUserFromLS from '../../functional/delete_username_from_ls';
+import deleteUserDataFromLS from '../../functional/delete_user_data_from_ls';
 
 function createHeader(): HTMLElement {
   const header = createNewElement({ tag: 'header', className: 'header' });
@@ -14,7 +14,7 @@ function createHeader(): HTMLElement {
   const btnLogout = createButton({
     className: 'logout-btn',
     text: 'Logout',
-    onClick: () => deleteUserFromLS(),
+    onClick: () => deleteUserDataFromLS(),
   });
 
   header.append(logo, btnLogout);

@@ -1,13 +1,16 @@
-function whatLevelChoosed(): string {
+import getUserLastRoundFromLS from './get_last_round_from_LS';
+
+function whatLevelChoose(): string {
   const levelBtn: HTMLSelectElement | null =
     document.querySelector('#level-btn');
   if (levelBtn) {
     const level = levelBtn.value;
-    //console.log(level);
+
     return level;
   } else {
-    return '1';
+    const lastLevel: string[] | undefined = getUserLastRoundFromLS();
+    return lastLevel ? `${lastLevel[0]}` : '1';
   }
 }
 
-export default whatLevelChoosed;
+export default whatLevelChoose;
