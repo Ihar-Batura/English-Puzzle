@@ -355,7 +355,7 @@ button:disabled:hover {
   cursor: pointer;
 }
 
-option.finish {
+option.complete {
   background-color: var(--clr-valid);
 }
 

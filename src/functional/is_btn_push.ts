@@ -6,8 +6,7 @@ function isBtnPush(btnId: string): void {
   const hintState = getUserHintSateFromLS();
   if (btn && hintState) {
     btn.classList.toggle('cliked');
-    console.log(hintState);
-    console.log(btn);
+
     if (btnId === 'translate-btn' && hintState.text === true) {
       saveHintsSateInLs({
         audio: hintState.audio,

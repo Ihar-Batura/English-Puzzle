@@ -2,6 +2,7 @@ import startRound from './start_round';
 import cleanGameBoard from './clean_game_board';
 import createSelectElement from '../components/select';
 import saveResultsToLS from './save_round_results_to_LS';
+import highlightCompleteRound from './highlight_complete_round';
 
 async function giveLevelData(levelNumber: string, roundNumber: string) {
   const filePath = `/data/wordCollectionLevel${levelNumber}.json`;
@@ -25,10 +26,9 @@ async function giveLevelData(levelNumber: string, roundNumber: string) {
     selected: roundNumber,
   });
 
-  console.log(arrOfRounds[+roundNumber - 1]);
-
   cleanGameBoard();
   saveResultsToLS();
+  highlightCompleteRound();
 
   startRound(arrOfRounds[+roundNumber - 1], 0);
 }

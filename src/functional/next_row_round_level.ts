@@ -25,7 +25,7 @@ function nextRowRoundLevel() {
       startRound(roundData, gameRow);
     }
     if (gameRow > 9) {
-      saveCompleteRoundsInLS(+level - 1, +round);
+      saveCompleteRoundsInLS(+level - 1, +round - 1);
       showLevelData({
         author: roundData.levelData.author,
         cutSrc: roundData.levelData.cutSrc,

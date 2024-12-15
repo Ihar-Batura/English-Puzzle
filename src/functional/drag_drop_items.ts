@@ -62,7 +62,7 @@ function dragDropItems(rowNumber: number) {
 
   function drop(event: any): void {
     let itemId = event.dataTransfer.getData('id');
-    console.log(itemId);
+
     if (
       event.target.id === 'answer-row' ||
       event.target.id === `row_${rowNumber}`
