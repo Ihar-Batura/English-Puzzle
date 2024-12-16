@@ -313,7 +313,12 @@ option.complete {
   color: var(--clr-white);
   text-shadow: 3px 1px 3px var(--clr-dark);
   border: 1px solid var(--clr-background);
-  cursor: pointer;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.game-board__row-word[draggable] {
+  cursor: grab;
 }
 .game-board__row-word.valid {
   border: 1px solid var(--clr-valid);
