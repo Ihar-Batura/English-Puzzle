@@ -444,6 +444,24 @@ option.complete {
   display: block;
   margin: 0 auto;
 }
+.result-container .check-solution__btn {
+  margin: 15px auto 5px;
+}
+@media (width < 500px) {
+  .logo {
+    font-size: 16px;
+  }
+  .rules-text {
+    font-size: 14px;
+  }
+  .main {
+    padding: 10px;
+  }
+  .text-hint,
+  .game-board__row-word {
+    font-size: 12px;
+  }
+}
 ._section_okxtr_1 {
   display: flex;
   justify-content: center;
