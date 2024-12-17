@@ -388,11 +388,13 @@ option.complete {
   background-color: var(--clr-hint-btn-click);
 }
 .result-container {
-  max-width: 550px;
-  padding: 20px;
+  max-width: 500px;
+  padding: 10px 20px;
   background-color: var(--clr-background);
   border: 2px solid var(--clr-border-color);
   border-radius: 6px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 .result-img {
   max-width: 250px;
@@ -448,6 +450,10 @@ option.complete {
   margin: 15px auto 5px;
 }
 @media (width < 500px) {
+  .header,
+  .footer {
+    padding: 4px 10px;
+  }
   .logo {
     font-size: 16px;
   }
@@ -455,11 +461,29 @@ option.complete {
     font-size: 14px;
   }
   .main {
+    min-height: 720px;
     padding: 10px;
   }
-  .text-hint,
+  .text-hint {
+    font-size: 13px;
+    font-weight: 600;
+  }
   .game-board__row-word {
     font-size: 12px;
+  }
+  .hints-container {
+    margin-top: 10px;
+    gap: 8px;
+  }
+  .result-know,
+  .result-dontknow {
+    font-size: 14px;
+  }
+  .result-item__text {
+    font-size: 13px;
+  }
+  .page-result {
+    padding: 0 2px;
   }
 }
 ._section_okxtr_1 {
